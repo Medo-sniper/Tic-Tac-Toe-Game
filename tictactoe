@@ -1,0 +1,309 @@
+#! /bin/bash
+function usage {
+echo "usage: ${0##*/} command"
+echo "where command is:"
+echo "start  [X|O] start a tic-tac-toe game as X or O (default X)"
+echo "play row col play your piece at row (1-3), col (1-3)"
+echo "print  print current state of the game with moves"
+}
+function print {
+cat gameover
+
+while read line; do
+   B[1]=`echo $line | cut -d' ' -f1`
+   B[2]=`echo $line | cut -d' ' -f2`
+   B[3]=`echo $line | cut -d' ' -f3`
+   B[4]=`echo $line | cut -d' ' -f4`
+   B[5]=`echo $line | cut -d' ' -f5`
+   B[6]=`echo $line | cut -d' ' -f6`
+   B[7]=`echo $line | cut -d' ' -f7`
+   B[8]=`echo $line | cut -d' ' -f8`
+   B[9]=`echo $line | cut -d' ' -f9`
+done < board
+
+while read line; do
+   p=`echo $line | cut -d' ' -f1`
+done < piece
+
+while read line; do
+comp=`echo $line | cut -d' ' -f1`
+done < computer
+
+showboard
+echo "moves:"
+cat moves
+}
+
+
+function start {
+> moves
+> piece
+> computer
+> board
+> gameover
+> whoisturn.txt
+for ((i=1;i<=9;i++)) do
+        B[$i]=_
+done
+if [ "$p" = "O" ]; then
+   comp=X
+   else
+   comp=O
+fi
+echo "${p} " > piece
+echo "${comp} " > computer
+computerturn
+echo "${B[1]} ${B[2]} ${B[3]} ${B[4]} ${B[5]} ${B[6]} ${B[7]} ${B[8]} ${B[9]}" > board
+
+}
+function checkwin {
+if [ "${B[1]}" = "$p" ] && [ "${B[2]}" = "$p" ] && [ "${B[3]}" = "$p" ]; then
+echo " Game over: $p wins on Row number One "
+echo " Game over: $p wins on Row number One " > gameover
+win=1
+elif [ "${B[1]}" = "$comp" ] && [ "${B[2]}" = "$comp" ] && [ "${B[3]}" = "$comp" ]; then
+echo " Game over: $comp wins on Row number One "
+echo " Game over: $comp wins on Row number One " > gameover
+win=1
+fi
+if [ "${B[4]}" = "$p" ] && [ "${B[5]}" = "$p" ] && [ "${B[6]}" = "$p" ]; then
+echo " Game over: $p wins on Row number 2 "
+echo " Game over: $p wins on Row number 2 " > gameover
+win=1
+elif [ "${B[4]}" = "$comp" ] && [ "${B[5]}" = "$comp" ] && [ "${B[6]}" = "$comp" ]; then
+echo " Game over: $comp wins on Row number 2 "
+echo " Game over: $comp wins on Row number 2 " > gameover
+win=1
+fi
+if [ "${B[7]}" = "$p" ] && [ "${B[8]}" = "$p" ] && [ "${B[9]}" = "$p" ]; then
+echo " Game over: $p wins on Row number Three "
+echo " Game over: $p wins on Row number Three " > gameover
+win=1
+elif [ "${B[7]}" = "$comp" ] && [ "${B[8]}" = "$comp" ] && [ "${B[9]}" = "$comp" ]; then
+echo " Game over: $comp wins on Row number Three "
+echo " Game over: $comp wins on Row number Three " > gameover
+win=1
+fi
+
+if [ "${B[1]}" = "$p" ] && [ "${B[4]}" = "$p" ] && [ "${B[7]}" = "$p" ]; then
+        echo " Game over: $p wins on Column number One "
+        echo " Game over: $p wins on Column number One " > gameover
+win=1
+elif [ "${B[1]}" = "$comp" ] && [ "${B[4]}" = "$comp" ] && [ "${B[7]}" = "$comp" ]; then
+        echo " Game over: $comp wins on Column number One "
+        echo " Game over: $comp wins on Column number One " > gameover
+        win=1
+fi
+
+if [ "${B[2]}" = "$p" ] && [ "${B[5]}" = "$p" ] && [ "${B[8]}" = "$p" ]; then
+        echo " Game over: $p wins on Column number Two "
+        echo " Game over: $p wins on Column number Two " > gameover
+        win=1
+elif [ "${B[2]}" = "$comp" ] && [ "${B[5]}" = "$comp" ] && [ "${B[8]}" = "$comp" ]; then
+        echo " Game over: $comp wins on Column number Two "
+        echo " Game over: $comp wins on Column number Two " > gameover
+win=1
+fi
+if [ "${B[3]}" = "$p" ] && [ "${B[6]}" = "$p" ] && [ "${B[9]}" = "$p" ]; then
+        echo " Game over: $p wins on Column number Three "
+        echo " Game over: $p wins on Column number Three " > gameover
+        win=1
+elif [ "${B[3]}" = "$comp" ] && [ "${B[6]}" = "$comp" ] && [ "${B[9]}" = "$comp" ]; then
+        echo " Game over: $comp wins on Column number Three "
+        echo " Game over: $comp wins on Column number Three " > gameover
+win=1
+fi
+if [ "${B[1]}" = "$p" ] && [ "${B[5]}" = "$p" ] && [ "${B[9]}" = "$p" ]; then
+        echo " Game over: $p wins diagonally "
+        echo " Game over: $p wins diagonally " > gameover
+win=1
+elif [ "${B[1]}" = "$comp" ] && [ "${B[5]}" = "$comp" ] && [ "${B[9]}" = "$comp" ]; then
+        echo " Game over: $comp wins diagonally "
+        echo " Game over: $comp wins diagonally " > gameover
+win=1
+fi
+if [ "${B[3]}" = "$p" ] && [ "${B[5]}" = "$p" ] && [ "${B[7]}" = "$p" ]; then
+        echo " Game over: $p wins diagonally "
+        echo " Game over: $p wins diagonally " > gameover
+win=1
+elif [ "${B[3]}" = "$comp" ] && [ "${B[5]}" = "$comp" ] && [ "${B[7]}" = "$comp" ]; then
+        echo " Game over: $comp wins diagonally "
+        echo " Game over: $comp wins diagonally " > gameover
+        win=1
+fi
+if [[ turn -eq 9 && win -eq 0 ]]; then
+        echo " Game over: Draw! "
+        echo " Game over: Draw! " > gameover
+fi
+}
+
+function computerturn {
+while read line; do
+p=`echo $line | cut -d' ' -f1`
+done < piece
+
+while read line; do
+comp=`echo $line | cut -d' ' -f1`
+done < computer
+
+checkwin
+x=0
+spots=9
+turn=1
+win=0
+
+while read line; do
+   turn=`echo $line | cut -d' ' -f1`
+done < whoisturn.txt
+
+checkwin
+w=0
+while [[ $w -ne 1 ]]; do
+row=$((RANDOM%3+1))
+col=$((RANDOM%3+1))
+in=$(($row+$(($col-1))*3))
+if [ "${B[$in]}" = "_" ]; then
+B[$in]=$comp
+w=1
+echo " put $comp in location ($row,$col) " >> moves
+echo " ${B[*]} " > board
+cat board
+turn=$(($turn+2))
+echo "${turn} " > whoisturn.txt
+fi
+done
+
+echo " ${p}" > piece
+cat piece
+showboard
+echo "${B[1]} ${B[2]} ${B[3]} ${B[4]} ${B[5]} ${B[6]} ${B[7]} ${B[8]} ${B[9]}" > board
+checkwin
+}
+
+function play {
+while read line; do
+   B[1]=`echo $line | cut -d' ' -f1`
+   B[2]=`echo $line | cut -d' ' -f2`
+   B[3]=`echo $line | cut -d' ' -f3`
+   B[4]=`echo $line | cut -d' ' -f4`
+   B[5]=`echo $line | cut -d' ' -f5`
+   B[6]=`echo $line | cut -d' ' -f6`
+   B[7]=`echo $line | cut -d' ' -f7`
+   B[8]=`echo $line | cut -d' ' -f8`
+   B[9]=`echo $line | cut -d' ' -f9`
+done < board
+
+checkwin
+while read line; do
+   p=`echo $line | cut -d' ' -f1`
+done < piece
+
+while read line; do
+comp=`echo $line | cut -d' ' -f1`
+done < computer
+
+row=$2
+col=$3
+max=3
+min=1
+if [[ row -lt min || row -gt max ]]; then
+      echo "please enter a valid row number between 1 to 3"
+elif [[ col -lt min || col -gt max ]]; then
+      echo "please enter a valid column number between 1 to 3"
+else
+      index=$(($col+$(($row-1))*3))
+if [ "${B[$index]}" = "_" ]; then
+      B[$index]=$p
+      echo " put $p in location ($row,$col) " >> moves
+      computerturn
+else
+      echo " please choose a different spot "
+      :
+fi
+fi
+checkwin
+echo "${B[1]} ${B[2]} ${B[3]} ${B[4]} ${B[5]} ${B[6]} ${B[7]} ${B[8]} ${B[9]}" > board
+}
+
+function showboard {
+echo "Player: $p , Computer: $comp"
+echo
+echo " ${B[1]}  | ${B[2]}  | ${B[3]}"
+
+echo "---+---+---"
+
+echo " ${B[4]}  | ${B[5]}  | ${B[6]}"
+
+echo "---+---+---"
+
+echo " ${B[7]}  | ${B[8]}  | ${B[9]}"
+echo " "
+for ((i=1;i<=9;i++)) do
+        echo -n " ${B[$i]}"
+done
+echo
+}
+
+declare -A B
+m=$2
+if [[ "$m" != ^-?[0-9]+$ ]]; then
+if [ "$m" = "O" ] || [ "$m" = "o" ]; then
+p=O
+else
+p=X
+fi
+if [ "$p" = "O" ]; then
+comp=X
+else
+comp=O
+fi
+echo " player : $p , computer: $comp"
+else
+row=$2
+col=$3
+fi
+
+s=$1
+case $s in
+start)
+start
+;;
+play)
+                play "$@"
+;;
+        print)
+                print
+                ;;
+*)
+
+                usage
+;;
+esac
+
+if [[ "$2" != ^-?[0-9]+$ ]]; then
+if [ "$2" = "O" ] || [ "$2" = "o" ]; then
+p=O
+else
+p=X
+fi
+if [ "$p" = "O" ]; then
+comp=X
+else
+comp=O
+fi
+echo " player : $p , computer: $comp"
+else
+row=$2
+col=$3
+fi
+
+
+sudo touch piece
+sudo touch computer
+sudo touch moves
+sudo touch board
+sudo touch gameover
+sudo touch whoisturn.txt
+
+
+
