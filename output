@@ -1,0 +1,1030 @@
+Output::::
+ 
+ _ _ _ _ X _ _ _ _
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ O X 
+ O _ X _ X _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ O  | _  | X
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | _
+ 
+ O _ X _ X _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ O _ X O X _ X _ _ 
+ O
+Player: O , Computer: X
+
+ O  | _  | X
+---+---+---
+ O  | X  | _
+---+---+---
+ X  | _  | _
+ 
+ O _ X O X _ X _ _
+ Game over: X wins diagonally 
+ Game over: X wins diagonally 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start X
+ player : X , computer: O
+ O _ _ _ _ _ _ _ _ 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | _
+ 
+ O _ _ _ _ _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ O O _ _ X _ _ _ _ 
+ X
+Player: X , Computer: O
+
+ O  | O  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | _
+ 
+ O O _ _ X _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ play 3 1
+play FAIL formats: can't open input file `1': No such file or directory
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ O O O _ X _ X _ _ 
+ X
+Player: X , Computer: O
+
+ O  | O  | O
+---+---+---
+ _  | X  | _
+---+---+---
+ X  | _  | _
+ 
+ O O O _ X _ X _ _
+ Game over: O wins on Row number One 
+ Game over: O wins on Row number One 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+Unescaped left brace in regex is deprecated, passed through in regex; marked by <-- HERE in m/%{ <-- HERE (.*?)}/ at /usr/bin/print line 528.
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+ Game over: O wins on Row number One 
+Player: X , Computer: O
+Player: X , Computer: O
+
+   |   | 
+---+---+---
+   |   | 
+---+---+---
+   |   | 
+ 
+         
+moves:
+ put O in location /(1,1/) 
+ put X in location /(2,2/) 
+ put O in location /(2,1/) 
+ put X in location /(3,1/) 
+ put O in location /(3,1/) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+ Game over: O wins on Row number One 
+Player: X , Computer: O
+Player: X , Computer: O
+
+ O  | O  | O
+---+---+---
+ _  | X  | _
+---+---+---
+ X  | _  | _
+ 
+ O O O _ X _ X _ _
+moves:
+ put O in location /(1,1/) 
+ put X in location /(2,2/) 
+ put O in location /(2,1/) 
+ put X in location /(3,1/) 
+ put O in location /(3,1/) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ more piece
+ X
+ahmad1@ubuntu:~$ more moves
+ put O in location /(1,1/) 
+ put X in location /(2,2/) 
+ put O in location /(2,1/) 
+ put X in location /(3,1/) 
+ put O in location /(3,1/) 
+ahmad1@ubuntu:~$ more gameover
+ Game over: O wins on Row number One 
+ahmad1@ubuntu:~$ ./ttt start X
+ player : X , computer: O
+ _ _ _ _ _ _ _ _ O 
+ X
+Player: X , Computer: O
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | O
+ 
+ _ _ _ _ _ _ _ _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ X _ _ _ O _ _ _ O 
+ X
+Player: X , Computer: O
+
+ X  | _  | _
+---+---+---
+ _  | O  | _
+---+---+---
+ _  | _  | O
+ 
+ X _ _ _ O _ _ _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ X _ _ _ O O X _ O 
+ X
+Player: X , Computer: O
+
+ X  | _  | _
+---+---+---
+ _  | O  | O
+---+---+---
+ X  | _  | O
+ 
+ X _ _ _ O O X _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ Game over: X wins on Column number One 
+ Game over: X wins on Column number One 
+ X _ _ X O O X O O 
+ X
+Player: X , Computer: O
+
+ X  | _  | _
+---+---+---
+ X  | O  | O
+---+---+---
+ X  | O  | O
+ 
+ X _ _ X O O X O O
+ Game over: X wins on Column number One 
+ Game over: X wins on Column number One 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+ Game over: X wins on Column number One 
+Player: X , Computer: O
+Player: X , Computer: O
+
+ X  | _  | _
+---+---+---
+ X  | O  | O
+---+---+---
+ X  | O  | O
+ 
+ X _ _ X O O X O O
+moves:
+ put O in location (3,3) 
+ put X in location /(1,1/) 
+ put O in location (2,2) 
+ put X in location /(3,1/) 
+ put O in location (3,2) 
+ put X in location /(2,1/) 
+ put O in location (2,3) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ clear
+[3;J
+ahmad1@ubuntu:~$ ./ttt start o
+ player : O , computer: X
+ _ _ _ _ _ X _ _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | _  | X
+---+---+---
+ _  | _  | _
+ 
+ _ _ _ _ _ X _ _ _
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ O X _ _ _ X _ _ _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ _  | _  | X
+---+---+---
+ _  | _  | _
+ 
+ O X _ _ _ X _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 2
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ O X _ O _ X _ X _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ O  | _  | X
+---+---+---
+ _  | X  | _
+ 
+ O X _ O _ X _ X _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ Game over: O wins on Column number One 
+ Game over: O wins on Column number One 
+ O X _ O X X O X _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ O  | X  | X
+---+---+---
+ O  | X  | _
+ 
+ O X _ O X X O X _
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Two 
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Two 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start X
+ player : X , computer: O
+ _ _ _ _ _ _ _ O _ 
+ X
+Player: X , Computer: O
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | O  | _
+ 
+ _ _ _ _ _ _ _ O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ _ O _ _ _ _ X O _ 
+ X
+Player: X , Computer: O
+
+ _  | O  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ X  | O  | _
+ 
+ _ O _ _ _ _ X O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 3
+ player : X , computer: O
+ _ O X O _ _ X O _ 
+ X
+Player: X , Computer: O
+
+ _  | O  | X
+---+---+---
+ O  | _  | _
+---+---+---
+ X  | O  | _
+ 
+ _ O X O _ _ X O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ Game over: X wins diagonally 
+ Game over: X wins diagonally 
+ _ O X O X _ X O O 
+ X
+Player: X , Computer: O
+
+ _  | O  | X
+---+---+---
+ O  | X  | _
+---+---+---
+ X  | O  | O
+ 
+ _ O X O X _ X O O
+ Game over: X wins diagonally 
+ Game over: X wins diagonally 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+ Game over: X wins diagonally 
+Player: X , Computer: O
+Player: X , Computer: O
+
+ _  | O  | X
+---+---+---
+ O  | X  | _
+---+---+---
+ X  | O  | O
+ 
+ _ O X O X _ X O O
+moves:
+ put O in location (2,3) 
+ put X in location (3,1) 
+ put O in location (2,1) 
+ put X in location (1,3) 
+ put O in location (1,2) 
+ put X in location (2,2) 
+ put O in location (3,3) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt
+ player : X , computer: O
+usage: ttt command
+where command is:
+start  [X|O] start a tic-tac-toe game as X or O (default X)
+play row col play your piece at row (1-3), col (1-3)
+print  print current state of the game with moves
+ player : X , computer: O
+ahmad1@ubuntu:~$ more piece
+ X
+ahmad1@ubuntu:~$ more moves
+ put O in location (2,3) 
+ put X in location (3,1) 
+ put O in location (2,1) 
+ put X in location (1,3) 
+ put O in location (1,2) 
+ put X in location (2,2) 
+ put O in location (3,3) 
+ahmad1@ubuntu:~$ ./ttt start
+ player : X , computer: O
+ _ _ _ _ _ _ _ _ O 
+ X
+Player: X , Computer: O
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | O
+ 
+ _ _ _ _ _ _ _ _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ O _ _ _ X _ _ _ O 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | O
+ 
+ O _ _ _ X _ _ _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 3
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ O _ _ _ X O X _ O 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ _  | X  | O
+---+---+---
+ X  | _  | O
+ 
+ O _ _ _ X O X _ O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 3
+ player : X , computer: O
+ Game over: X wins diagonally 
+ Game over: X wins diagonally 
+ O O X _ X O X _ O 
+ X
+Player: X , Computer: O
+
+ O  | O  | X
+---+---+---
+ _  | X  | O
+---+---+---
+ X  | _  | O
+ 
+ O O X _ X O X _ O
+ Game over: X wins diagonally 
+ Game over: X wins diagonally 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+ Game over: X wins diagonally 
+Player: X , Computer: O
+
+ O  | O  | X
+---+---+---
+ _  | X  | O
+---+---+---
+ X  | _  | O
+ 
+ O O X _ X O X _ O
+moves:
+ put O in location (3,3) 
+ put X in location (2,2) 
+ put O in location (1,1) 
+ put X in location (3,1) 
+ put O in location (3,2) 
+ put X in location (1,3) 
+ put O in location (2,1) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start
+ player : X , computer: O
+ O _ _ _ _ _ _ _ _ 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | _
+ 
+ O _ _ _ _ _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ O _ _ _ X _ _ O _ 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | O  | _
+ 
+ O _ _ _ X _ _ O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ O _ _ O X _ X O _ 
+ X
+Player: X , Computer: O
+
+ O  | _  | _
+---+---+---
+ O  | X  | _
+---+---+---
+ X  | O  | _
+ 
+ O _ _ O X _ X O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 3
+ player : X , computer: O
+ O _ O O X X X O _ 
+ X
+Player: X , Computer: O
+
+ O  | _  | O
+---+---+---
+ O  | X  | X
+---+---+---
+ X  | O  | _
+ 
+ O _ O O X X X O _
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ _ _ _ _ _ O 
+ X
+Player: X , Computer: O
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | O
+ 
+ _ _ _ _ _ _ _ _ O
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ O X _ _ _ O 
+ X
+Player: X , Computer: O
+
+ _  | _  | _
+---+---+---
+ O  | X  | _
+---+---+---
+ _  | _  | O
+ 
+ _ _ _ O X _ _ _ O
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ O O X _ X _ O 
+ X
+Player: X , Computer: O
+
+ _  | _  | O
+---+---+---
+ O  | X  | _
+---+---+---
+ X  | _  | O
+ 
+ _ _ O O X _ X _ O
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ Game over: Draw! 
+ please choose a different spot 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ _ X _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | _
+ 
+ _ _ _ _ X _ _ _ _
+ Game over: Draw! 
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ Game over: Draw! 
+ please choose a different spot 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ _ X X O _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | X  | X
+---+---+---
+ O  | _  | _
+ 
+ _ _ _ _ X X O _ _
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ O X X O _ X 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ O  | X  | X
+---+---+---
+ O  | _  | X
+ 
+ _ _ _ O X X O _ X
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ Game over: Draw! 
+ Game over: O wins on Column number One 
+ Game over: O wins on Column number One 
+ O X _ O X X O _ X 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ O  | X  | X
+---+---+---
+ O  | _  | X
+ 
+ O X _ O X X O _ X
+ Game over: O wins on Column number One 
+ Game over: Draw! 
+ Game over: O wins on Column number One 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+ _ _ _ _ X _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | _
+ 
+ _ _ _ _ X _ _ _ _
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ O X _ _ X _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ _  | _  | _
+ 
+ O X _ _ X _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 2
+ player : X , computer: O
+ O X _ _ X X _ O _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ _  | X  | X
+---+---+---
+ _  | O  | _
+ 
+ O X _ _ X X _ O _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 2
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ O X X O X X _ O _ 
+ O
+Player: O , Computer: X
+
+ O  | X  | X
+---+---+---
+ O  | X  | X
+---+---+---
+ _  | O  | _
+ 
+ O X X O X X _ O _
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ Game over: O wins on Column number One 
+ Game over: O wins on Column number One 
+ O X X O X X O O X 
+ O
+Player: O , Computer: X
+
+ O  | X  | X
+---+---+---
+ O  | X  | X
+---+---+---
+ O  | O  | X
+ 
+ O X X O X X O O X
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Three 
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Three 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+ _ _ _ _ _ _ _ _ X 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | X
+ 
+ _ _ _ _ _ _ _ _ X
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 3 1
+ player : X , computer: O
+ _ X _ _ _ _ O _ X 
+ O
+Player: O , Computer: X
+
+ _  | X  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ O  | _  | X
+ 
+ _ X _ _ _ _ O _ X
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+ O X _ _ X _ O _ X 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ _  | X  | _
+---+---+---
+ O  | _  | X
+ 
+ O X _ _ X _ O _ X
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+ Game over: O wins on Column number One 
+ Game over: O wins on Column number One 
+ O X _ O X _ O X X 
+ O
+Player: O , Computer: X
+
+ O  | X  | _
+---+---+---
+ O  | X  | _
+---+---+---
+ O  | X  | X
+ 
+ O X _ O X _ O X X
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Two 
+ Game over: O wins on Column number One 
+ Game over: X wins on Column number Two 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+./ttt: line 146: c: command not found
+ _ _ _ _ _ _ X _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ X  | _  | _
+ 
+ _ _ _ _ _ _ X _ _
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 2 1
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ _ _ _ O _ _ X X _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ O  | _  | _
+---+---+---
+ X  | X  | _
+ 
+ _ _ _ O _ _ X X _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 3 3
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ _ _ _ O _ X X X O 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ O  | _  | X
+---+---+---
+ X  | X  | O
+ 
+ _ _ _ O _ X X X O
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 1
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ O _ X O _ X X X O 
+ O
+Player: O , Computer: X
+
+ O  | _  | X
+---+---+---
+ O  | _  | X
+---+---+---
+ X  | X  | O
+ 
+ O _ X O _ X X X O
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ Game over: O wins diagonally 
+ Game over: O wins diagonally 
+ O X X O O X X X O 
+ O
+Player: O , Computer: X
+
+ O  | X  | X
+---+---+---
+ O  | O  | X
+---+---+---
+ X  | X  | O
+ 
+ O X X O O X X X O
+ Game over: O wins diagonally 
+ Game over: O wins diagonally 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+./ttt: line 146: c: command not found
+ Game over: Draw! 
+ Game over: Draw! 
+ _ _ _ _ _ _ _ _ X 
+ O
+Player: O , Computer: X
+
+ _  | _  | _
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | X
+ 
+ _ _ _ _ _ _ _ _ X
+ Game over: Draw! 
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+ Game over: Draw! 
+./ttt: line 146: c: command not found
+ Game over: Draw! 
+ Game over: Draw! 
+ X _ _ _ O _ _ _ X 
+ O
+Player: O , Computer: X
+
+ X  | _  | _
+---+---+---
+ _  | O  | _
+---+---+---
+ _  | _  | X
+ 
+ X _ _ _ O _ _ _ X
+ Game over: Draw! 
+ Game over: Draw! 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt start O
+ player : O , computer: X
+./ttt: line 146: c: command not found
+ _ _ X _ _ _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ _  | _  | X
+---+---+---
+ _  | _  | _
+---+---+---
+ _  | _  | _
+ 
+ _ _ X _ _ _ _ _ _
+ player : O , computer: X
+ahmad1@ubuntu:~$ ./ttt play 2 2
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ X _ X _ O _ _ _ _ 
+ O
+Player: O , Computer: X
+
+ X  | _  | X
+---+---+---
+ _  | O  | _
+---+---+---
+ _  | _  | _
+ 
+ X _ X _ O _ _ _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 2
+ player : X , computer: O
+./ttt: line 146: c: command not found
+ X O X _ O _ X _ _ 
+ O
+Player: O , Computer: X
+
+ X  | O  | X
+---+---+---
+ _  | O  | _
+---+---+---
+ X  | _  | _
+ 
+ X O X _ O _ X _ _
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 2
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt play 1 2
+ player : X , computer: O
+ please choose a different spot 
+ player : X , computer: O
+ahmad1@ubuntu:~$ ./ttt print
+ player : X , computer: O
+Player: O , Computer: X
+
+ X  | O  | X
+---+---+---
+ _  | O  | _
+---+---+---
+ X  | _  | _
+ 
+ X O X _ O _ X _ _
+moves:
+ put X in location (3,1) 
+ put O in location (2,2) 
+ put X in location (1,1) 
+ put O in location (1,2) 
+ put X in location (1,3) 
+ player : X , computer: O
+ahmad1@ubuntu:~$ more piece
+ O
+ahmad1@ubuntu:~$ more moves
+ put X in location (3,1) 
+ put O in location (2,2) 
+ put X in location (1,1) 
+ put O in location (1,2) 
+ put X in location (1,3) 
+ahmad1@ubuntu:~$ more gameover
+ahmad1@ubuntu:~$ more board
+X O X _ O _ X _ _
+ahmad1@ubuntu:~$ 
+
